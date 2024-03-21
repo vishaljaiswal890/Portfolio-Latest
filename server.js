@@ -61,7 +61,7 @@ router.post("/contact", (req, res) => {
 });
 
 // Mount router
-app.use("/", router);
+// app.use("/", router);
 // For local
 // app.use('/static', express.static(path.join(__dirname, './Frontend/build/static')));
 // For vercel
