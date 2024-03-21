@@ -66,6 +66,9 @@ app.use("/", router);
 // app.use('/static', express.static(path.join(__dirname, './Frontend/build/static')));
 // For vercel
 app.use('/static', express.static(path.join(__dirname, './Frontend/build/static')));
+app.get('/test', (req, res) => {
+  res.send('Server is working');
+})
 app.get('*', function(req, res) {
   res.sendFile('index.html', {root: path.join(__dirname, './Frontend/build/')});
 });
