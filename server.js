@@ -69,9 +69,9 @@ app.use('/static', express.static(path.join(__dirname, './Frontend/build/static'
 app.get('/test', (req, res) => {
   res.send('Server is working');
 })
-app.get('*', function(req, res) {
-  res.sendFile('index.html', {root: path.join(__dirname, './Frontend/build/')});
-});
+// app.get('/*', function(req, res) {
+//   res.sendFile('index.html', {root: path.join(__dirname, './Frontend/build/')});
+// });
 
 // Start server
 app.listen(PORT, () => {
