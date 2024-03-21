@@ -32,13 +32,7 @@ contactEmail.verify((error) => {
     console.log("Ready to Send");
   }
 });
-// For local
-app.use('/static', express.static(path.join(__dirname, './Frontend/build/static')));
-// For vercel
-app.use('/static', express.static(path.join(__dirname, './Frontend/build/static')));
-app.get('*', function(req, res) {
-  res.sendFile('index.html', {root: path.join(__dirname, './Frontend/build/')});
-});
+
 
 // Contact form route
 router.post("/contact", (req, res) => {
@@ -68,6 +62,13 @@ router.post("/contact", (req, res) => {
 
 // Mount router
 app.use("/", router);
+// For local
+// app.use('/static', express.static(path.join(__dirname, './Frontend/build/static')));
+// For vercel
+app.use('/static', express.static(path.join(__dirname, './Frontend/build/static')));
+app.get('*', function(req, res) {
+  res.sendFile('index.html', {root: path.join(__dirname, './Frontend/build/')});
+});
 
 // Start server
 app.listen(PORT, () => {
