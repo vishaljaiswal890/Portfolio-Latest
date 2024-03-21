@@ -42,7 +42,7 @@ const Contact = () => {
     setButtonText("Sending...");
     
     try {
-      const response = await axios.post("https://portfolio-latest-black.vercel.app/contact", formDetails);
+      const response = await axios.post("/contact", formDetails);
   
       if (response.status === 200) {
         setFormDetails(formInitialDetails);
