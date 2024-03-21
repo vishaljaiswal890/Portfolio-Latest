@@ -1,7 +1,7 @@
 {
   "scripts": {
     "build": "cd Frontend && npm install && npm run build && cd .. && npm install ",
-    "deploy": "cd Frontend && npm run build && cd .. && git add . && git commit -am \"Deployment\" && git push -u origin main"
+    "deploy": "cd Frontend && cd .. && git add . && git commit -am \"Deployment\" && git push -u origin main"
   },
   "dependencies": {
     "cors": "^2.8.5",
