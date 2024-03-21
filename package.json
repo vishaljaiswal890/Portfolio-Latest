@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "deploy": "cd Frontend && npm run build && cd .. && git add . && git commit -am \"Deployment\" && git push -u origin main"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",

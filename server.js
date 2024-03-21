@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
 const dotenv = require("dotenv");
+const path = require('path')
 
 dotenv.config(); 
 
@@ -30,6 +31,11 @@ contactEmail.verify((error) => {
   } else {
     console.log("Ready to Send");
   }
+});
+
+app.use('/static', express.static(path.join(__dirname, './Frontend/build/static')));
+app.get('*', function(req, res) {
+  res.sendFile('index.html', {root: path.join(__dirname, './Frontend/build/')});
 });
 
 // Contact form route
