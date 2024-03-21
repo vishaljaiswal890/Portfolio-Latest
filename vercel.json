@@ -7,23 +7,12 @@
       "config": {
         "watch": ["Backend/**/*"]
       }
-    },
-    {
-      "src": "Frontend/",
-      "use": "@vercel/react",
-      "config": {
-        "watch": ["Frontend/**/*"] 
-      }
     }
   ],
   "routes": [
     {
       "src": "/api/*",
       "dest": "/api/*"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
     }
   ]
 }
