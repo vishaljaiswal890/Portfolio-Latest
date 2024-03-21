@@ -2,18 +2,28 @@
   "version": 2,
   "builds": [
     {
-      "src": "./Backend/server.js",
-      "use": "@vercel/node" 
+      "src": "Backend/*",
+      "use": "@vercel/node",
+      "config": {
+        "watch": ["Backend/**/*"]
+      }
     },
     {
-      "src": "./Frontend/build",
+      "src": "Frontend/",
       "use": "@vercel/react",
       "config": {
-        "outputDirectory": "public"
+        "watch": ["Frontend/**/*"] 
       }
     }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/" }
+    {
+      "src": "/api/*",
+      "dest": "/api/*"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 }
