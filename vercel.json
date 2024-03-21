@@ -12,8 +12,5 @@
         "outputDirectory": "public"
       }
     }
-  ],
-  "routes": [ 
-    { "src": "/(.*)", "dest": "/api/*"}
   ]
 }
