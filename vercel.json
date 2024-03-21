@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "./Backend/server.js",
+      "use": "@vercel/node" 
+    },
+    {
+      "src": "./Frontend/build",
+      "use": "@vercel/react",
+      "config": {
+        "outputDirectory": "public"
+      }
+    }
+  ],
+  "routes": [ 
+    { "src": "/(.*)", "dest": "/api/*"}
+  ]
+}
