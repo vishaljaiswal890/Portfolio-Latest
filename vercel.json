@@ -2,17 +2,19 @@
     "version": 2,
     "builds" : [
         {
-            "src": "./",
-            "use": "@vercel/node",
-            "config": {
-                "watch" : ["./**/*"]
-            }
+            "src": "./server.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "./Frontend/build/index.html",
+            "use": "@vercel/static"
         }
+
     ],
     "routes": [
         {
-            "src": "/api/*",
-            "dest": "/api/"
+            "src": "/.*",
+            "dest": "./server.js"
         }
     ]
 }
