@@ -1,8 +1,8 @@
 {
     "version": 2,
     "builds" : [
-      { "src" : "./" , "use" : "@vercel/node"},
-      { "src" : "./Frontend" , "use" : "@vercel/react"}
+      { "src" : "./*.js" , "use" : "@vercel/node"},
+      { "src" : "./Frontend/*" , "use" : "@vercel/react"}
       
     ],
     "routes": [
