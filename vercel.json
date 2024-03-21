@@ -1,14 +1,14 @@
 {
     "version": 2,
     "builds" : [
-        { "src": "./Frontend/build/", "use": "@vercel/static" },
-        { "src": "*.py", "use": "@vercel/python" },
-        { "src": "*.js", "use": "@vercel/node" }
+      { "src" : "./" , "use" : "@vercel/node"},
+      { "src" : "./Frontend" , "use" : "@vercel/react"}
+      
     ],
     "routes": [
         {
-            "src" : "/server.js/*",
-            "dest": "/"
+            "src" : "/(.*)",
+            "dest": "/index.html"
         }
     ]
 }
